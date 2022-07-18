@@ -41,6 +41,9 @@ class FavoriteAdapter(private val dataSet: ArrayList<Result>) :
                     isFav = !isFav
                     checkChangeListener.onCheckChange(this, position)
                 }
+                cvMain.setOnClickListener {
+                    checkChangeListener.onClick(this, cvMain)
+                }
             }
         }
 
