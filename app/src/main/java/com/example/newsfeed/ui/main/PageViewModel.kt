@@ -33,16 +33,7 @@ class PageViewModel constructor(
             }).liveData.cachedIn(viewModelScope)
 
 
-    private val searchClicked = Observer<Int> {
-        when (it) {
-            1 -> {}
-            2 -> {}
-            else -> throw IllegalStateException("Index is not valid")
-        }
-    }
-
     init {
-        _index.observeForever(searchClicked)
         fetchNews()
     }
 
@@ -62,11 +53,6 @@ class PageViewModel constructor(
             else
                 dbHelper.delete(item)
         }
-    }
-
-    override fun onCleared() {
-        _index.removeObserver(searchClicked)
-        super.onCleared()
     }
 
     private fun fetchNews() {
