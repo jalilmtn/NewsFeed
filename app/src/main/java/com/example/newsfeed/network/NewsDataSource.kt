@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 
-class PassengersDataSource(
+class NewsDataSource(
     private val api: MainRepository,
     private val dbHelper: DatabaseHelper
 ) :

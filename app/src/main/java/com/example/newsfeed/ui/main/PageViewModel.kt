@@ -8,7 +8,7 @@ import androidx.paging.liveData
 import com.example.newsfeed.db.DatabaseHelper
 import com.example.newsfeed.db.Resource
 import com.example.newsfeed.network.MainRepository
-import com.example.newsfeed.network.PassengersDataSource
+import com.example.newsfeed.network.NewsDataSource
 import com.example.newsfeed.network.model.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
@@ -29,7 +29,7 @@ class PageViewModel constructor(
         Pager(
             config = PagingConfig(pageSize = 10, prefetchDistance = 30),
             pagingSourceFactory = {
-                PassengersDataSource(repository , dbHelper)
+                NewsDataSource(repository , dbHelper)
             }).liveData.cachedIn(viewModelScope)
 
 
